@@ -1,13 +1,11 @@
-def add(tup):
-  temp = 0
-  for t in tup:
-    temp += t
-  return(temp)
+# Write a Python program to add an item in a tuple.
 
-def main():
-  tuplex = (4, 8, 3) 
-  print(add(tuplex))
-  
+tup = (1, 5, 2)
 
-if __name__ == "__main__":
-  main()
+
+def add_item(tup, new):
+    new = tup + (new,)
+    return new
+
+
+print(add_item(tup, 8))

@@ -1,32 +1,17 @@
-def positive_vibe(string):
-  first = "not"
-  second = "poor"
-  replace = "good"
-  list = []
-  d = 0
-  for i in range(len(string)):
-    if string[i] == ' ':
-      list.append(string[d:i])
-      d = i+1
-  list.append(string[d:i+1])
+# Write a Python program to find the first appearance of the substring 'not' and
+# 'poor' from a given string, if 'not' follows the 'poor', replace the whole 'not'...'poor'
+# substring with 'good'. Return the resulting string.
 
-  for i in range(len(list)):
-    if list[i] == first:
-      temp = string[i:]
-      for j in range( len(temp)):
-        if list[j] == second:
-          temp_list = string[:i]
-          temp.append(replace)
-          for k in list[j:]:
-            temp.append[k]
-          break
+def not_poor(str1):
+    snot = str1.find('not')
+    spoor = str1.find('poor')
+
+    if spoor > snot and snot > 0 and spoor > 0:
+        str1 = str1.replace(str1[snot:(spoor+4)], 'good')
+        return str1
+    else:
+        return str1
 
 
-
-
-def main():
-  string = input()
-  print(positive_vibe(string))
-
-if __name__ == "__main__":
-    main()
+print(not_poor('The lyrics is not that poor!'))
+print(not_poor('The lyrics is poor!'))

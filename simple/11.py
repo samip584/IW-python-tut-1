@@ -1,17 +1,13 @@
-def give_count(string):
-  list = []
-  d = 1 #considering the last sentence does not have space
-  for i in range(len(string)):
-    if string[i] == ' ':
-      d = d+1
-  return(d)
+# Write a Python program to count the occurrences of each word in a given
+# sentence.
 
+string = input()
+counts = {}
+words = string.split()
 
-
-
-def main():
-  string = input()
-  print(give_count(string))
-
-if __name__ == "__main__":
-    main()
+for word in words:
+    if word in counts:
+        counts[word] += 1
+    else:
+        counts[word] = 1
+print(counts)
